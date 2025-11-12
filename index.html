@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ai Bot</title>
+    
+    <!-- Favicon Implementation -->
+    <link rel="icon" type="image/svg+xml" href="fav.png" />
+    <!-- Apple Touch Icon for iOS devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3e%3cdefs%3e%3clinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3e%3cstop offset='0%25' style='stop-color:%234F46E5;stop-opacity:1' /%3e%3cstop offset='100%25' style='stop-color:%237C3AED;stop-opacity:1' /%3e%3c/linearGradient%3e%3c/defs%3e%3crect width='180' height='180' rx='32' fill='url(%23grad1)'/%3e%3ccircle cx='90' cy='78' r='32' fill='none' stroke='white' stroke-width='8'/%3e%3cpath d='M55 112 L90 128 L125 112' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3e%3ccircle cx='72' cy='140' r='6' fill='white'/%3e%3ccircle cx='90' cy='146' r='6' fill='white'/%3e%3ccircle cx='108' cy='140' r='6' fill='white'/%3e%3cpath d='M78 55 L90 42 L102 55' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3e%3c/svg%3e" />
+    
+    <!-- Theme colors for mobile browsers -->
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="msapplication-TileColor" content="#4F46E5" />
+    
+    <!-- Web App Manifest for PWA support -->
+    <link rel="manifest" href="data:application/json,%7B%22name%22%3A%22SportsTech%20AI%22%2C%22short_name%22%3A%22SportsTech%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%2C%253csvg%2520xmlns%253D%2527http%253A//www.w3.org/2000/svg%2527%2520viewBox%253D%25270%25200%2520192%2520192%2527%253e%253cdefs%253e%253clinearGradient%2520id%253D%2527grad1%2527%2520x1%253D%25270%252525%2527%2520y1%253D%25270%252525%2527%2520x2%253D%2527100%252525%2527%2520y2%253D%2527100%252525%2527%253e%253cstop%2520offset%253D%25270%252525%2527%2520style%253D%2527stop-color%253A%25234F46E5%253Bstop-opacity%253A1%2527%2520/%253e%253cstop%2520offset%253D%2527100%252525%2527%2520style%253D%2527stop-color%253A%25237C3AED%253Bstop-opacity%253A1%2527%2520/%253e%253c/linearGradient%253e%253c/defs%253e%253crect%2520width%253D%2527192%2527%2520height%253D%2527192%2527%2520rx%253D%252736%2527%2520fill%253D%2527url%2528%2523grad1%2529%2527/%253e%253ccircle%2520cx%253D%252796%2527%2520cy%253D%252784%2527%2520r%253D%252736%2527%2520fill%253D%2527none%2527%2520stroke%253D%2527white%2527%2520stroke-width%253D%25279%2527/%253e%253cpath%2520d%253D%2527M60%2520120%2520L96%2520138%2520L132%2520120%2527%2520stroke%253D%2527white%2527%2520stroke-width%253D%25279%2527%2520stroke-linecap%253D%2527round%2527%2520stroke-linejoin%253D%2527round%2527%2520fill%253D%2527none%2527/%253e%253ccircle%2520cx%253D%252778%2527%2520cy%253D%2527150%2527%2520r%253D%25277%2527%2520fill%253D%2527white%2527/%253e%253ccircle%2520cx%253D%252796%2527%2520cy%253D%2527156%2527%2520r%253D%25277%2527%2520fill%253D%2527white%2527/%253e%253ccircle%2520cx%253D%2527114%2527%2520cy%253D%2527150%2527%2520r%253D%25277%2527%2520fill%253D%2527white%2527/%253e%253cpath%2520d%253D%2527M84%252060%2520L96%252045%2520L108%252060%2527%2520stroke%253D%2527white%2527%2520stroke-width%253D%25277%2527%2520stroke-linecap%253D%2527round%2527%2520stroke-linejoin%253D%2527round%2527%2520fill%253D%2527none%2527/%253e%253c/svg%253e%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image/svg%2Bxml%22%7D%5D%2C%22theme_color%22%3A%22%234F46E5%22%2C%22background_color%22%3A%22%23FFFFFF%22%2C%22display%22%3A%22standalone%22%7D" />
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Dark theme (for sidebar)
+                        'sidebar-dark': '#202123',
+                        'sidebar-gray': '#343541',
+                        'sidebar-light-gray': '#444654',
+                        // Light theme (for chat)
+                        'chat-white': '#FFFFFF',
+                        'chat-light-gray': '#F7F7F8',
+                        'chat-border': '#E5E5E5',
+                        'chat-text-primary': '#202123',
+                        'chat-text-secondary': '#6E6E80',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        /* For custom scrollbar in chat history, using light colors */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D1D5DB; /* gray-300 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9CA3AF; /* gray-400 */
+        }
+        textarea {
+            resize: none;
+        }
+        /* Custom class to hide scrollbar but keep scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        /* Blinking cursor animation */
+        @keyframes blink {
+            from, to { color: transparent; }
+            50% { color: inherit; }
+        }
+        .blinking-cursor {
+            animation: blink 1s step-end infinite;
+            font-weight: bold;
+        }
+        /* Custom styles for markdown rendering to ensure proper display */
+        .prose-chat ul, .prose-chat ol {
+            padding-left: 1.5rem;
+            margin-top: 0.75em;
+            margin-bottom: 0.75em;
+        }
+        .prose-chat li {
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .prose-chat a {
+            color: #2563EB; /* Equivalent to text-blue-600 */
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .prose-chat a:hover {
+            color: #1D4ED8; /* Equivalent to text-blue-700 */
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-chat-white">
+    <div id="root"></div>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0",
+    "react-markdown": "https://esm.sh/react-markdown@9?bundle",
+    "remark-gfm": "https://esm.sh/remark-gfm@4?bundle",
+    "react-syntax-highlighter/": "https://aistudiocdn.com/react-syntax-highlighter@^15.6.6/",
+    "react-syntax-highlighter": "https://aistudiocdn.com/react-syntax-highlighter@^15.6.6",
+    "lodash-es": "https://aistudiocdn.com/lodash-es@^4.17.21"
+  }
+}
+</script>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

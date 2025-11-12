@@ -1,0 +1,102 @@
+/* Theme Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e5e5e5;
+}
+
+.dark-theme {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #404040;
+}
+
+/* Dark Theme Overrides - Use !important to ensure they override existing styles */
+.dark-theme {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .bg-chat-white {
+  background-color: #1a1a1a !important;
+}
+
+.dark-theme .bg-white {
+  background-color: #2d2d2d !important;
+}
+
+.dark-theme .text-chat-text-primary {
+  color: #ffffff !important;
+}
+
+.dark-theme .text-chat-text-secondary {
+  color: #cccccc !important;
+}
+
+.dark-theme .border-gray-200 {
+  border-color: #404040 !important;
+}
+
+.dark-theme .hover\:bg-gray-100:hover {
+  background-color: #404040 !important;
+}
+
+.dark-theme .bg-gray-100 {
+  background-color: #404040 !important;
+}
+
+.dark-theme .text-gray-600 {
+  color: #cccccc !important;
+}
+
+.dark-theme .text-gray-500 {
+  color: #999999 !important;
+}
+
+.dark-theme .bg-chat-light-gray {
+  background-color: #2d2d2d !important;
+}
+
+.dark-theme .border-gray-300 {
+  border-color: #404040 !important;
+}
+
+.dark-theme .placeholder-gray-500::placeholder {
+  color: #999999 !important;
+}
+
+/* Message bubbles */
+.dark-theme .bg-black {
+  background-color: #0066cc !important; /* Change user message color for better contrast */
+}
+
+/* Input fields */
+.dark-theme input,
+.dark-theme textarea {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+  border-color: #404040 !important;
+}
+
+.dark-theme input:focus,
+.dark-theme textarea:focus {
+  border-color: #0066cc !important;
+}
+
+/* Code blocks and syntax highlighting */
+.dark-theme .prose {
+  color: #ffffff !important;
+}
+
+.dark-theme .prose code {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .prose pre {
+  background-color: #1a1a1a !important;
+}

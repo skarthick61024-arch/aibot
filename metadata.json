@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Chat Replica",
+  "description": "A feature-rich chat application that mirrors the core functionality and user interface of ChatGPT, powered by Google's Gemini API. Users can engage in dynamic, responsive conversations with an advanced AI.",
+  "requestFramePermissions": []
+}
