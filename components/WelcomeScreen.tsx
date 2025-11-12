@@ -17,8 +17,8 @@ const Logo: React.FC<{
     theme = 'light'
 }) => {
     const logoSrc = theme === 'dark' 
-         ? "/fav.png"      
-         : "/fav.png";   
+         ? "/chatbot.png"      
+         : "/chatbot.png";   
 
     return (
         <img 
